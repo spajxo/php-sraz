@@ -11,7 +11,7 @@ jobs:
             - uses: actions/cache@v2
               with:
                 path: ~/.composer/cache/files
-                key: dependencies-php-${{ matrix.php }}-composer-${{ hashFiles('composer.json') }}
+                key: dependencies-php-composer-${{ hashFiles('composer.json') }}
 
             - name: Composer Dependencies
               run: composer update --no-interaction --prefer-dist
