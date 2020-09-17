@@ -7,11 +7,13 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
-            - uses: shivammathur/setup-php@v2
+              
             - uses: actions/cache@v2
               with:
                 path: ~/.composer/cache/files
                 key: dependencies-php-composer-${{ hashFiles('composer.json') }}
+
+            - uses: shivammathur/setup-php@v2
 
             - name: Composer Dependencies
               run: composer update --no-interaction --prefer-dist
